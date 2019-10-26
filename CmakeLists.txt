@@ -1,0 +1,4 @@
+cmake_minimum_required(3.10)
+
+find_package(VTK REQUIRED)
+include(${VTK_USE_FILES})
