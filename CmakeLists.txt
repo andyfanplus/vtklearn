@@ -7,4 +7,4 @@ find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
 add_subdirectory(ISOSurface)
-
+add_subdirectory(StructuredVolumeRendering)

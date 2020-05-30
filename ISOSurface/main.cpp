@@ -10,7 +10,7 @@
 #include<vtkRenderWindow.h>
 #include<vtkRenderWindowInteractor.h>
 
-#define vtk_create()
+
 using namespace std; 
 int main()
 {

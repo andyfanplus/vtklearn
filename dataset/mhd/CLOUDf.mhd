@@ -11,4 +11,4 @@ ElementSpacing = 1 1 1
 DimSize = 500 500 100
 AnatomicalOrientation = ???
 ElementType = MET_FLOAT
-ElementDataFile = CLOUDf33.raw
+ElementDataFile = CLOUDf.raw
