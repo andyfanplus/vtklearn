@@ -34,7 +34,7 @@ int main()
 	property->SetColor(color);
 	property->SetScalarOpacity(opacity);
 
-
+	//unstructured volume rendering algorithms only supported tetrahedral grid
 	vtkDataSetTriangleFilter *filter = vtkDataSetTriangleFilter::New();
 	filter->SetInputData(reader->GetOutput());
 	filter->Update();
