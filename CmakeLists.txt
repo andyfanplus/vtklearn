@@ -1,4 +1,10 @@
-cmake_minimum_required(3.10)
+cmake_minimum_required(VERSION 3.10)
+
+project(vtklearn)
+
 
 find_package(VTK REQUIRED)
-include(${VTK_USE_FILES})
+include(${VTK_USE_FILE})
+
+add_subdirectory(ISOSurface)
+
