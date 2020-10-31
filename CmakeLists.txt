@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
-project(vtklearn)
+PROJECT(vtklearn)
 
 
-find_package(VTK REQUIRED)
-include(${VTK_USE_FILE})
+FIND_PACKAGE(VTK REQUIRED)
+INCLUDE(${VTK_USE_FILE})
 
-add_subdirectory(ISOSurface)
-add_subdirectory(StructuredVolumeRendering)
+ADD_SUBDIRECTORY(ISOSurface)
+ADD_SUBDIRECTORY(StructuredVolumeRendering)
 ADD_SUBDIRECTORY(UnStructuredVolumeRendering)
