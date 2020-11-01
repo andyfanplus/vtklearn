@@ -41,6 +41,7 @@ void single(int argc, char **argv) {
 	dd->SetInputData(ds);
 	dd->SetController(contr);
 	dd->UseMinimalMemoryOff();
+	dd->Update();
 
 	//the output with d3 fitler is unstructured grid;
 	ug = vtkUnstructuredGrid::SafeDownCast(dd->GetOutput());
@@ -85,10 +86,11 @@ void multiblock(int argc, char **argv) {
 	dd->SetInputData(input);
 	dd->SetController(contr);
 	dd->UseMinimalMemoryOff();
+	dd->Update();
 
 	//the output with d3 fitler is composited data;
 	output = vtkMultiBlockDataSet::SafeDownCast(dd->GetOutput());
-	cout << output->GetNumberOfBlocks() << endl;
+	cout << output->GetNumberOfCells() << endl;
 
 	if (me == 0) {
 		contr->TriggerBreakRMIs();
