@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 #include "vtkSocketController.h"
 
@@ -76,9 +76,9 @@ int main(int argc, char **argv)
   csSynchronizedRenderers->SetImageReductionFactor(1);
   csSynchronizedRenderers->SetRootProcessId(IsServer);
 
-  //rw->OffScreenRenderingOn();
   if (IsServer)
   {
+    rw->OffScreenRenderingOn();
     socketController->ProcessRMIs();
   }
   else

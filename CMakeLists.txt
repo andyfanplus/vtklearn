@@ -2,10 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
 PROJECT(vtklearn)
 
-
-FIND_PACKAGE(VTK REQUIRED)
-INCLUDE(${VTK_USE_FILE})
-
+add_subdirectory(baseexample)
 ADD_SUBDIRECTORY(ISOSurface)
 ADD_SUBDIRECTORY(StructuredVolumeRendering)
 ADD_SUBDIRECTORY(UnStructuredVolumeRendering)

@@ -12,9 +12,11 @@ endif()
 
 ADD_EXECUTABLE(${CURRENT_FOLDER} main.cpp)
 
+
 TARGET_LINK_LIBRARIES(${CURRENT_FOLDER}
 ${VTK_LIBRARIES}
 )
+
 
 if (VTK_VERSION VERSION_GREATER "9.0.0")
 vtk_module_autoinit(
@@ -22,4 +24,3 @@ vtk_module_autoinit(
   MODULES ${VTK_LIBRARIES}
 )
 endif()
-

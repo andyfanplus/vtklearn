@@ -12,6 +12,7 @@
 #include<vtkRenderWindow.h>
 #include<vtkRenderWindowInteractor.h>
 
+
 using namespace std; 
 int main()
 {
@@ -56,9 +57,12 @@ int main()
 	vtkRenderWindowInteractor *rwi = vtkRenderWindowInteractor::New();
 	rwi->SetRenderWindow(rWin);
 	rwi->SetSize(500, 500);
-	rwi->Render();
 
-	rwi->Initialize();
+	//rwi->Render();
+	//rwi->Initialize();
+	//rwi->Start();
+
+	rWin->Render();
 	rwi->Start();
 
 	return 0;

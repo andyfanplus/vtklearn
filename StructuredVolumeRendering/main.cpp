@@ -5,19 +5,31 @@
 #include<vtkPiecewiseFunction.h>
 #include<vtkVolumeProperty.h>
 #include<vtkGPUVolumeRayCastMapper.h>
+#include <vtkFixedPointVolumeRayCastMapper.h>
 #include<vtkVolume.h>
 #include<vtkRenderer.h>
 #include<vtkRenderWindow.h>
 #include<vtkRenderWindowInteractor.h>
 
+//#include <vtkAutoInit.h>
+//VTK_MODULE_INIT(vtkRenderingVolumeOpenGL2);
+//VTK_MODULE_INIT(vtkRenderingOpenGL2);
+//VTK_MODULE_INIT(vtkInteractionStyle);
+
 using namespace std; 
 int main()
 {
+
 	vtkMetaImageReader *reader = vtkMetaImageReader::New();
-	reader->SetFileName("../../dataset\\mhd\\CLOUDf.mhd");
+	reader->SetFileName("../../dataset/mhd/CLOUDf.mhd");
+
 	reader->Update();
 
 	double *range = reader->GetOutput()->GetScalarRange();
+
+	auto l = range[0];
+	auto r = range[1];
+
 
 	vtkColorTransferFunction *color = vtkColorTransferFunction::New();
 	color->AddRGBPoint(range[0], 1, 1, 0);
@@ -32,7 +44,8 @@ int main()
 	property->SetColor(color);
 	property->SetScalarOpacity(opacity);
 
-	vtkGPUVolumeRayCastMapper *mapper = vtkGPUVolumeRayCastMapper::New();
+	auto mapper = vtkFixedPointVolumeRayCastMapper::New();
+	//vtkGPUVolumeRayCastMapper *mapper = vtkGPUVolumeRayCastMapper::New();
 	mapper->SetInputData(reader->GetOutput());
 	mapper->Update();
 
@@ -49,9 +62,13 @@ int main()
 	vtkRenderWindowInteractor *rwi = vtkRenderWindowInteractor::New();
 	rwi->SetRenderWindow(rWin);
 	rwi->SetSize(500, 500);
-	rwi->Render();
 
-	rwi->Initialize();
+
+	//rwi->Render();
+	//rwi->Initialize();
+	//rwi->Start();
+
+	rWin->Render();
 	rwi->Start();
 
 	return 0;
