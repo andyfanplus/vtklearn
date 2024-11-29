@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 
   vtkSmartPointer<vtkRenderWindow> rw = vtkSmartPointer<vtkRenderWindow>::New();
   rw->AddRenderer(renderer);
-  rw->SetWindowName(IsServer ? "server" : "clent");
+  rw->SetWindowName(IsServer ? "server" : "client");
 
   vtkSmartPointer<vtkSynchronizedRenderWindows> csSynchronizedRenderWindows =
       vtkSmartPointer<vtkSynchronizedRenderWindows>::New();
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
 
   if (IsServer)
   {
-    rw->OffScreenRenderingOn();
+    //rw->OffScreenRenderingOn();
     socketController->ProcessRMIs();
   }
   else

@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 
   if (me == 0)
   {
-    const char *fname = "comb.vtk";
+    const char *fname = "../../dataset/curvilinear/comb.vtk";
     vtkDataSetReader *dsr = vtkDataSetReader::New();
     dsr->SetFileName(fname);
     ds = dsr->GetOutput();
